@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace BpMeter
+namespace BpMeter.UI
 {
     [Application]
     public class MainApplication : MauiApplication

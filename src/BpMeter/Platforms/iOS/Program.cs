@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace BpMeter
+namespace BpMeter.UI
 {
     public class Program
     {

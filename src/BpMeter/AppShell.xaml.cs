@@ -1,4 +1,4 @@
-﻿namespace BpMeter
+﻿namespace BpMeter.UI
 {
     public partial class AppShell : Shell
     {
