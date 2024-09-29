@@ -80,11 +80,9 @@
 
             <Picker ItemsSource="{Binding AllPalpitationTypes}" SelectedIndex="{Binding SelectedPalpitation, Converter={StaticResource EnumToIntConverter}, ConverterParameter={x:Type enums:PalpitationType}}"/>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Submit measuring" 
+            <Button Text="Submit measuring" 
                 SemanticProperties.Hint="Submit measuring"
-                HorizontalOptions="Fill" 
+                HorizontalOptions="Center" 
                 Command="{Binding SubmitReadingCommand}"/>
         </VerticalStackLayout>
     </ScrollView>

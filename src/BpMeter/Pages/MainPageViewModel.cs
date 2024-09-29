@@ -3,7 +3,6 @@ using BpMeter.Domain;
 using BpMeter.Domain.Enums;
 using BpMeter.Extensions;
 using BpMeter.Mvvm;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
 
 namespace BpMeter.UI.Pages;
@@ -74,9 +73,9 @@ public class MainPageViewModel : ViewModelBase
         SelectedPalpitation = PalpitationType.Normal;
 
         SubmitReadingCommand = new Command(
-            execute: () =>
+            execute: async () =>
             {
-                SubmitReading();
+                await SubmitReading();
                 ClearValues();
                 RefreshCanExecutes();
             },
@@ -91,7 +90,7 @@ public class MainPageViewModel : ViewModelBase
         ((Command)SubmitReadingCommand)?.ChangeCanExecute();
     }
 
-    private void SubmitReading()
+    private async Task SubmitReading()
     {
         if (Systolic == null || Diastolic == null || HeartRate == null)
         {
@@ -107,12 +106,11 @@ public class MainPageViewModel : ViewModelBase
             HeartRate = HeartRate.Value,
             PartOfTheDay = SelectedPartOfTheDay,
             Palpitation = SelectedPalpitation,
-            Date = DateOnly.FromDateTime(dateTimeNow),
-            Time = TimeOnly.FromDateTime(dateTimeNow),
+            DateTime = DateTime.UtcNow,
             Commentary = Commentary
         };
 
-        _bpReadingService.AddNewReadingAsync(bpReading);
+        await _bpReadingService.AddNewReadingAsync(bpReading);
     }
 
     private void ClearValues()

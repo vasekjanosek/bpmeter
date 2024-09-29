@@ -9,6 +9,9 @@ public static class IServiceCollectionExtensions
         services.AddSingleton<MainPageViewModel>();
         services.AddSingleton<MainPage>();
 
+        services.AddSingleton<MeasuringHistoryPageViewModel>();
+        services.AddSingleton<MeasuringHistoryPage>();
+
         return services;
     }
 }

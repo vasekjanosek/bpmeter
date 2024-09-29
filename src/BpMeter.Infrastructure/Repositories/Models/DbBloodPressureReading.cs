@@ -6,7 +6,7 @@ namespace BpMeter.Domain;
 public class DbBloodPressureReading
 {
     [PrimaryKey]
-    public int Id { get; set; }
+    public int? Id { get; set; }
 
     public int Systolic { get; set; }
 

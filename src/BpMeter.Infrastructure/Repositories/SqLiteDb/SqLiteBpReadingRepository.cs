@@ -25,7 +25,7 @@ namespace BpMeter.Infrastructure.Repositories.SqLiteDb
             var rows = await connection.DeleteAsync(entity);
             if (rows < 1)
             {
-                throw new EntityNotDeletedException($"Entity BloodPressure with ID {entity.Id} could not be deleted.", entity.Id);
+                throw new EntityNotDeletedException($"Entity BloodPressure with ID {entity.Id.Value} could not be deleted.", entity.Id.Value);
             }
         }
 

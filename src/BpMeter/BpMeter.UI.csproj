@@ -41,9 +41,6 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appiconfg.svg">
-		  <BaseSize>456,456</BaseSize>
-		</MauiIcon>
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" BaseSize="456,456" />
 
 		<!-- Splash Screen -->
@@ -76,6 +73,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\MeasuringHistoryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\StatisticsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

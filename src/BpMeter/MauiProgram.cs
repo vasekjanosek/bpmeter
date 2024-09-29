@@ -1,5 +1,6 @@
 ﻿using BpMeter.Application;
 using BpMeter.Infrastructure;
+using BpMeter.Infrastructure.Repositories;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 
@@ -19,6 +20,7 @@ namespace BpMeter.UI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.ConfigureDatabase(FileSystem.Current.AppDataDirectory);
             builder.Services.RegisterApplication();
             builder.Services.RegisterInfrastructure();
             builder.Services.RegisterUi();
