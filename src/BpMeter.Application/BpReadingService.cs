@@ -13,11 +13,16 @@ namespace BpMeter.Application
             _bpRepository = bpRepository;
         }
 
-        public Task<BloodPressureReading> AddNewReadingAsync(BloodPressureReading reading)
+        public async Task<BloodPressureReading> AddNewReadingAsync(BloodPressureReading reading)
         {
             if (reading == null) throw new ArgumentNullException(nameof(reading));
 
-            return _bpRepository.Insert(reading);
+            return await _bpRepository.InsertAsync(reading);
+        }
+
+        public async Task<List<BloodPressureReading>> GetAllReadingAsync()
+        {
+            return await _bpRepository.GetAllAsync();
         }
     }
 }

@@ -2,13 +2,13 @@
 
 public interface IBloodPressureReadingRepository
 {
-    Task<List<BloodPressureReading>> GetAll();
+    Task<List<BloodPressureReading>> GetAllAsync();
 
-    Task<BloodPressureReading> Get();
+    Task<BloodPressureReading> GetAsync(int id);
 
-    Task<BloodPressureReading> Insert(BloodPressureReading reading);
+    Task<BloodPressureReading> InsertAsync(BloodPressureReading reading);
 
-    Task<BloodPressureReading> Update(BloodPressureReading reading);
+    Task<BloodPressureReading> UpdateAsync(BloodPressureReading reading);
 
-    Task Delete(BloodPressureReading reading);
+    Task DeleteAsync(BloodPressureReading reading);
 }

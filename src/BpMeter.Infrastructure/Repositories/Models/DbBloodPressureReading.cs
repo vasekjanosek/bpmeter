@@ -1,9 +1,13 @@
 ﻿using BpMeter.Domain.Enums;
+using SQLite;
 
 namespace BpMeter.Domain;
 
-public class BloodPressureReading
+public class DbBloodPressureReading
 {
+    [PrimaryKey]
+    public int Id { get; set; }
+
     public int Systolic { get; set; }
 
     public int Diastolic { get; set; }
