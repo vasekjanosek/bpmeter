@@ -1,4 +1,4 @@
-﻿namespace BpMeter
+﻿namespace BpMeter.UI.Pages
 {
     public partial class MainPage : ContentPage
     {

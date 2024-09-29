@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using BpMeter.Application;
+using BpMeter.Infrastructure;
+using Microsoft.Extensions.Logging;
 
-namespace BpMeter
+namespace BpMeter.UI
 {
     public static class MauiProgram
     {
@@ -14,6 +16,9 @@ namespace BpMeter
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+
+            builder.Services.RegisterApplication();
+            builder.Services.RegisterInfrastructure();
 
 #if DEBUG
     		builder.Logging.AddDebug();
