@@ -10,7 +10,7 @@ public class BloodPressureReading
 
     public int Diastolic { get; set; }
 
-    public int HearthRate { get; set; }
+    public int HeartRate { get; set; }
 
     public PartOfTheDay PartOfTheDay { get; set; }
 

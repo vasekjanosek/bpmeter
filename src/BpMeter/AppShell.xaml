@@ -12,9 +12,9 @@
         ContentTemplate="{DataTemplate pages:MainPage}"
         Route="MainPage" />
 
-    <ShellContent
+    <!--<ShellContent
         Title="Statistics"
         ContentTemplate="{DataTemplate pages:StatisticsPage}"
-        Route="StatisticsPage" />
+        Route="StatisticsPage" />-->
 
 </Shell>

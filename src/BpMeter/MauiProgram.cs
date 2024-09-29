@@ -1,5 +1,6 @@
 ﻿using BpMeter.Application;
 using BpMeter.Infrastructure;
+using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 
 namespace BpMeter.UI
@@ -11,6 +12,7 @@ namespace BpMeter.UI
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -19,6 +21,7 @@ namespace BpMeter.UI
 
             builder.Services.RegisterApplication();
             builder.Services.RegisterInfrastructure();
+            builder.Services.RegisterUi();
 
 #if DEBUG
     		builder.Logging.AddDebug();
