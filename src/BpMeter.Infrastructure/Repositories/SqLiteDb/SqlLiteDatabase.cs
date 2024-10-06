@@ -1,4 +1,4 @@
-﻿using BpMeter.Domain;
+﻿using BpMeter.Infrastructure.Repositories.Models;
 using SQLite;
 
 namespace BpMeter.Infrastructure.Repositories.SqLiteDb;
@@ -7,7 +7,7 @@ internal class SqlLiteDatabase
 {
     private readonly DatabaseSettings _settings;
 
-    private SQLiteAsyncConnection _database;
+    private SQLiteAsyncConnection? _database;
 
     public SqlLiteDatabase(DatabaseSettings settings)
     {
@@ -28,6 +28,11 @@ internal class SqlLiteDatabase
 
     private async Task ConfigureAsync()
     {
-        await _database.CreateTableAsync<DbBloodPressureReading>();
+        if (_database == null)
+            throw new Exception("Cannot configure database. Connection to the database does not exist.");
+
+        await _database.CreateTableAsync<BloodPressureEntity>();
+        await _database.CreateTableAsync<BodyWeightEntity>();
+        await _database.CreateTableAsync<PersonalInformationEntity>();
     }
 }

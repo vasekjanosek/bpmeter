@@ -90,7 +90,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
                 History.Add(new BloodPressureRecordViewModel(record));
             }
         }
-        catch (Exception ex)
+        catch (Exception)
         {
         }
 

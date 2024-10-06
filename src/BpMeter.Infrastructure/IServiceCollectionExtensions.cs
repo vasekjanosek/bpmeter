@@ -10,7 +10,9 @@ public static class IServiceCollectionExtensions
     public static IServiceCollection RegisterInfrastructure(this IServiceCollection services)
     {
         services.AddAutoMapper(typeof(DbMappingProfile));
-        services.AddTransient<IBloodPressureReadingRepository, SqLiteBpReadingRepository>();
+        services.AddTransient<IBloodPressureRepository, BloodPressureRepository>();
+        services.AddTransient<IPersonalInformationRepository, PersonalInformationRepository>();
+        services.AddTransient<IBodyWeightRepository, BodyWeightRepository>();
         services.AddSingleton<SqlLiteDatabase>();
 
         return services;

@@ -2,7 +2,7 @@
 
 namespace BpMeter.Domain;
 
-public class BloodPressureReading
+public class BloodPressureReading : Reading
 {
     public int Systolic { get; set; }
 

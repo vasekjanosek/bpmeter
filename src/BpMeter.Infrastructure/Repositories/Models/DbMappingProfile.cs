@@ -7,6 +7,8 @@ internal class DbMappingProfile : Profile
 {
     public DbMappingProfile()
     {
-        CreateMap<DbBloodPressureReading, BloodPressureReading>().ReverseMap();
+        CreateMap<BloodPressureEntity, BloodPressureReading>().ReverseMap();
+        CreateMap<BodyWeightEntity, BodyWeightReading> ().ReverseMap();
+        CreateMap<PersonalInformationEntity, PersonalInformation>().ReverseMap();
     }
 }

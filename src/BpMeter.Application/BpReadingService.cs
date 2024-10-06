@@ -6,9 +6,9 @@ namespace BpMeter.Application
 {
     internal class BpReadingService : IBpReadingService
     {
-        private readonly IBloodPressureReadingRepository _bpRepository;
+        private readonly IBloodPressureRepository _bpRepository;
 
-        public BpReadingService(IBloodPressureReadingRepository bpRepository)
+        public BpReadingService(IBloodPressureRepository bpRepository)
         {
             _bpRepository = bpRepository;
         }

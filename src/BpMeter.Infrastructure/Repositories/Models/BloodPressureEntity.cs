@@ -1,13 +1,9 @@
 ﻿using BpMeter.Domain.Enums;
-using SQLite;
 
-namespace BpMeter.Domain;
+namespace BpMeter.Infrastructure.Repositories.Models;
 
-public class DbBloodPressureReading
+internal class BloodPressureEntity : AuditableEntity
 {
-    [PrimaryKey]
-    public int? Id { get; set; }
-
     public int Systolic { get; set; }
 
     public int Diastolic { get; set; }
