@@ -15,7 +15,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Pages\MeasuringHistoryPage.xaml">
+    <MauiXaml Update="Pages\History\MeasuringHistoryPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\StatisticsPage.xaml">

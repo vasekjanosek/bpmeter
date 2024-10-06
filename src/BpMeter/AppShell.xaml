@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:BpMeter.UI.Pages"
+    xmlns:history="clr-namespace:BpMeter.UI.Pages.History"
     Shell.FlyoutBehavior="Flyout"
     Title="BpMeter">
 
@@ -15,7 +16,7 @@
 
         <ShellContent
             Title="Reading History"
-            ContentTemplate="{DataTemplate pages:MeasuringHistoryPage}"
+            ContentTemplate="{DataTemplate history:MeasuringHistoryPage}"
             Route="HistoryPage" />
     </Tab>
 

@@ -1,4 +1,4 @@
-namespace BpMeter.UI.Pages;
+namespace BpMeter.UI.Pages.History;
 
 public partial class MeasuringHistoryPage : ContentPage
 {

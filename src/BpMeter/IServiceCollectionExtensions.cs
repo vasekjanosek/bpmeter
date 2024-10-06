@@ -1,4 +1,5 @@
 ﻿using BpMeter.UI.Pages;
+using BpMeter.UI.Pages.History;
 
 namespace BpMeter;
 
