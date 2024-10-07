@@ -36,7 +36,7 @@
                         <SwipeView>
                             <SwipeView.LeftItems>
                                 <SwipeItems Mode="Execute">
-                                    <SwipeItem Text="Details"
+                                    <SwipeItem Text="More details"
                                        BackgroundColor="LightGreen"
                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:MeasuringHistoryPageViewModel}}, Path=ShowDetailsCommand}"
                                        CommandParameter="{Binding .}" />
@@ -44,7 +44,7 @@
                             </SwipeView.LeftItems>
                             <SwipeView.RightItems>
                                 <SwipeItems Mode="Execute">
-                                    <SwipeItem Text="Details"
+                                    <SwipeItem Text="Less details"
                                        BackgroundColor="PaleVioletRed"
                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:MeasuringHistoryPageViewModel}}, Path=HideDetailsCommand}"
                                        CommandParameter="{Binding .}" />
@@ -87,7 +87,7 @@
                                       Grid.Column="0"
                                       Grid.ColumnSpan="4"
                                       IsVisible="{Binding ShowDetails}">
-                                    <Grid.Style>
+                                    <!--<Grid.Style>
                                         <Style TargetType="Grid">
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding ShowDetails}" Value="True" TargetType="Grid">
@@ -98,7 +98,7 @@
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
-                                    </Grid.Style>
+                                    </Grid.Style>-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />

@@ -8,7 +8,7 @@ internal class PersonalInformationEntity : AuditableEntity
 
     public string LastName { get; set; }
 
-    public DateOnly BirthDate { get; set; }
+    public DateTime BirthDate { get; set; }
 
     public int HeightInCm { get; set; }
 }

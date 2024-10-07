@@ -72,11 +72,11 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
     private async Task GetMeasuringHistoryAsync()
     {
         IsRefreshRunning = true;
-
-        var history = await _bpReadingService.GetAllReadingAsync();
-
         try
         {
+
+            var history = await _bpReadingService.GetAllReadingAsync();
+
             History.Clear();
 
             /*var groupedHistory = history.GroupBy(x => DateOnly.FromDateTime(x.DateTime)).OrderBy(group => group.Key);
@@ -90,7 +90,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
                 History.Add(new BloodPressureRecordViewModel(record));
             }
         }
-        catch (Exception)
+        catch (Exception ex)
         {
         }
 

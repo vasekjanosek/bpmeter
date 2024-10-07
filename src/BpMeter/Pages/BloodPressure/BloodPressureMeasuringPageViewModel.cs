@@ -5,9 +5,9 @@ using BpMeter.Extensions;
 using BpMeter.Mvvm;
 using System.Windows.Input;
 
-namespace BpMeter.UI.Pages;
+namespace BpMeter.Pages.BloodPressure;
 
-public class MainPageViewModel : ViewModelBase
+public class BloodPressureMeasuringPageViewModel : ViewModelBase
 {
     private readonly IBpReadingService _bpReadingService;
 
@@ -58,14 +58,14 @@ public class MainPageViewModel : ViewModelBase
         get { return _commentary; }
     }
 
-    public bool IsReadingFilledAndValid => 
-        Systolic != null && IsIntValid(Systolic.Value) 
-        && Diastolic != null && IsIntValid(Diastolic.Value) 
+    public bool IsReadingFilledAndValid =>
+        Systolic != null && IsIntValid(Systolic.Value)
+        && Diastolic != null && IsIntValid(Diastolic.Value)
         && HeartRate != null && IsIntValid(HeartRate.Value);
 
     public ICommand SubmitReadingCommand { get; }
 
-    public MainPageViewModel(IBpReadingService bpReadingService)
+    public BloodPressureMeasuringPageViewModel(IBpReadingService bpReadingService)
     {
         _bpReadingService = bpReadingService;
 
