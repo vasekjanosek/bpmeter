@@ -3,18 +3,39 @@
     x:Class="BpMeter.UI.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:pages="clr-namespace:BpMeter.UI.Pages"
+    xmlns:home="clr-namespace:BpMeter.UI.Pages.Home"
+    xmlns:bloodPressure="clr-namespace:BpMeter.UI.Pages.BloodPressure"
+    xmlns:bodyWeight="clr-namespace:BpMeter.UI.Pages.BodyWeight"
+    xmlns:history="clr-namespace:BpMeter.UI.Pages.History"
+    xmlns:statistics="clr-namespace:BpMeter.UI.Pages.Statistics"
     Shell.FlyoutBehavior="Flyout"
-    Title="BpMeter">
+    Title="Body Meter">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="MainPage" />
+    <Tab>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate home:HomePage}"
+            Route="HomePage" />
+        
+        <ShellContent
+            Title="Blood Pressure Measuring"
+            ContentTemplate="{DataTemplate bloodPressure:BloodPressureMeasuringPage}"
+            Route="BloodPressureMeasuring" />
 
-    <ShellContent
-        Title="Statistics"
-        ContentTemplate="{DataTemplate pages:StatisticsPage}"
-        Route="StatisticsPage" />
+        <ShellContent
+            Title="Body Weight Measuring"
+            ContentTemplate="{DataTemplate bodyWeight:BodyWeightPage}"
+            Route="BloodPressureMeasuring" />
+
+        <ShellContent
+            Title="Measuring History"
+            ContentTemplate="{DataTemplate history:MeasuringHistoryPage}"
+            Route="MeasuringHistoryPage" />
+
+        <ShellContent
+            Title="Statistics"
+            ContentTemplate="{DataTemplate statistics:StatisticsPage}"
+            Route="StatisticsPage" />
+    </Tab>
 
 </Shell>

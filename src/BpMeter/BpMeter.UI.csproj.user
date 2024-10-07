@@ -15,7 +15,16 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Pages\StatisticsPage.xaml">
+    <MauiXaml Update="Pages\BodyWeight\BodyWeightPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\History\MeasuringHistoryPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\Home\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Pages\Statistics\StatisticsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>
