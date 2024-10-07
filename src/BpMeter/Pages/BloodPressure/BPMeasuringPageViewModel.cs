@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace BpMeter.Pages.BloodPressure;
 
-public class BloodPressureMeasuringPageViewModel : ViewModelBase
+public class BPMeasuringPageViewModel : ViewModelBase
 {
     private readonly IBpReadingService _bpReadingService;
 
@@ -65,7 +65,7 @@ public class BloodPressureMeasuringPageViewModel : ViewModelBase
 
     public ICommand SubmitReadingCommand { get; }
 
-    public BloodPressureMeasuringPageViewModel(IBpReadingService bpReadingService)
+    public BPMeasuringPageViewModel(IBpReadingService bpReadingService)
     {
         _bpReadingService = bpReadingService;
 

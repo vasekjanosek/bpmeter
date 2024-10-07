@@ -4,7 +4,7 @@ using BpMeter.Mvvm;
 
 namespace BpMeter.Pages.History;
 
-public class BloodPressureRecordViewModel : ViewModelBase
+public class BPRecordViewModel : ViewModelBase
 {
     private bool _showDetails;
 
@@ -28,7 +28,7 @@ public class BloodPressureRecordViewModel : ViewModelBase
         get { return _showDetails; }
     }
 
-    public BloodPressureRecordViewModel(BloodPressureReading reading)
+    public BPRecordViewModel(BloodPressureReading reading)
     {
         Systolic = reading.Systolic;
         Diastolic = reading.Diastolic;

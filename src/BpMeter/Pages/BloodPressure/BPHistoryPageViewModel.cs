@@ -6,13 +6,13 @@ using System.Windows.Input;
 
 namespace BpMeter.UI.Pages.History;
 
-public class MeasuringHistoryPageViewModel : ViewModelBase
+public class BPHistoryPageViewModel : ViewModelBase
 {
     private readonly IBpReadingService _bpReadingService;
 
     private bool _isRefreshRunning;
 
-    public ObservableCollection<BloodPressureRecordViewModel> History { get; } = new ObservableCollection<BloodPressureRecordViewModel>();
+    public ObservableCollection<BPRecordViewModel> History { get; } = new ObservableCollection<BPRecordViewModel>();
 
     public ICommand RefreshCommand { get; }
 
@@ -26,7 +26,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
         get { return _isRefreshRunning; }
     }
 
-    public MeasuringHistoryPageViewModel(IBpReadingService bpReadingService)
+    public BPHistoryPageViewModel(IBpReadingService bpReadingService)
     {
         _bpReadingService = bpReadingService;
 
@@ -44,7 +44,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
         ShowDetailsCommand = new Command(
             execute: (object param) =>
             {
-                ShowDetails((BloodPressureRecordViewModel)param, true);
+                ShowDetails((BPRecordViewModel)param, true);
             },
             canExecute: (object param) =>
             {
@@ -54,7 +54,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
         HideDetailsCommand = new Command(
             execute: (object param) =>
             {
-                ShowDetails((BloodPressureRecordViewModel)param, false);
+                ShowDetails((BPRecordViewModel)param, false);
             },
             canExecute: (object param) =>
             {
@@ -87,7 +87,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
 
             foreach (var record in history)
             {
-                History.Add(new BloodPressureRecordViewModel(record));
+                History.Add(new BPRecordViewModel(record));
             }
         }
         catch (Exception ex)
@@ -97,7 +97,7 @@ public class MeasuringHistoryPageViewModel : ViewModelBase
         IsRefreshRunning = false;
     }
 
-    private void ShowDetails(BloodPressureRecordViewModel param, bool show)
+    private void ShowDetails(BPRecordViewModel param, bool show)
     {
         param.ShowDetails = show;
     }

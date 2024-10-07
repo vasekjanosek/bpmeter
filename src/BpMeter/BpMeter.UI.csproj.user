@@ -18,13 +18,13 @@
     <MauiXaml Update="Pages\BodyWeight\BodyWeightPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\History\MeasuringHistoryPage.xaml">
+    <MauiXaml Update="Pages\BloodPressure\BPHistoryPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\Home\HomePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
-    <MauiXaml Update="Pages\Statistics\StatisticsPage.xaml">
+    <MauiXaml Update="Pages\BloodPressure\BPStatisticsPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

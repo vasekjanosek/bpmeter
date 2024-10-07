@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:BpMeter.UI.Pages.History"
-             x:Class="BpMeter.UI.Pages.History.MeasuringHistoryPage"
+             x:Class="BpMeter.UI.Pages.History.BPHistoryPage"
              Title="Measuring History">
     <ContentPage.Resources>
         <Style TargetType="Label">
@@ -38,7 +38,7 @@
                                 <SwipeItems Mode="Execute">
                                     <SwipeItem Text="More details"
                                        BackgroundColor="LightGreen"
-                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:MeasuringHistoryPageViewModel}}, Path=ShowDetailsCommand}"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:BPHistoryPageViewModel}}, Path=ShowDetailsCommand}"
                                        CommandParameter="{Binding .}" />
                                 </SwipeItems>
                             </SwipeView.LeftItems>
@@ -46,7 +46,7 @@
                                 <SwipeItems Mode="Execute">
                                     <SwipeItem Text="Less details"
                                        BackgroundColor="PaleVioletRed"
-                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:MeasuringHistoryPageViewModel}}, Path=HideDetailsCommand}"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:BPHistoryPageViewModel}}, Path=HideDetailsCommand}"
                                        CommandParameter="{Binding .}" />
                                 </SwipeItems>
                             </SwipeView.RightItems>
@@ -87,18 +87,6 @@
                                       Grid.Column="0"
                                       Grid.ColumnSpan="4"
                                       IsVisible="{Binding ShowDetails}">
-                                    <!--<Grid.Style>
-                                        <Style TargetType="Grid">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding ShowDetails}" Value="True" TargetType="Grid">
-                                                    <Setter Property="IsVisible" Value="True" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding ShowDetails}" Value="False" TargetType="Grid">
-                                                    <Setter Property="IsVisible" Value="False" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Grid.Style>-->
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />

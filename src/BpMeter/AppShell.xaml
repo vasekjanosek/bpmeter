@@ -11,31 +11,37 @@
     Shell.FlyoutBehavior="Flyout"
     Title="Body Meter">
 
-    <Tab>
+    <FlyoutItem Title="Home">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate home:HomePage}"
             Route="HomePage" />
-        
-        <ShellContent
-            Title="Blood Pressure Measuring"
-            ContentTemplate="{DataTemplate bloodPressure:BloodPressureMeasuringPage}"
-            Route="BloodPressureMeasuring" />
+    </FlyoutItem>
 
+    <FlyoutItem Title="Blood Pressure">
+        <Tab>
+            <ShellContent
+                Title="Blood Pressure Measuring"
+                ContentTemplate="{DataTemplate bloodPressure:BPMeasuringPage}"
+                Route="BloodPressureMeasuring" />
+
+            <ShellContent
+                Title="Measuring History"
+                ContentTemplate="{DataTemplate history:BPHistoryPage}"
+                Route="MeasuringHistoryPage" />
+
+            <ShellContent
+                Title="Statistics"
+                ContentTemplate="{DataTemplate statistics:BPStatisticsPage}"
+                Route="StatisticsPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Body Weight">
         <ShellContent
             Title="Body Weight Measuring"
             ContentTemplate="{DataTemplate bodyWeight:BodyWeightPage}"
             Route="BloodPressureMeasuring" />
-
-        <ShellContent
-            Title="Measuring History"
-            ContentTemplate="{DataTemplate history:MeasuringHistoryPage}"
-            Route="MeasuringHistoryPage" />
-
-        <ShellContent
-            Title="Statistics"
-            ContentTemplate="{DataTemplate statistics:StatisticsPage}"
-            Route="StatisticsPage" />
-    </Tab>
+    </FlyoutItem>
 
 </Shell>

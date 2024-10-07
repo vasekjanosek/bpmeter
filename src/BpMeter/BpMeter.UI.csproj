@@ -76,13 +76,13 @@
 	  <MauiXaml Update="Pages\BodyWeight\BodyWeightPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\History\MeasuringHistoryPage.xaml">
+	  <MauiXaml Update="Pages\BloodPressure\BPHistoryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Home\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Statistics\StatisticsPage.xaml">
+	  <MauiXaml Update="Pages\BloodPressure\BPStatisticsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -95,8 +95,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\BloodPressure\BloodPressureMeasuringPage.xaml.cs">
-	    <DependentUpon>BloodPressureMeasuringPage.xaml</DependentUpon>
+	  <Compile Update="Pages\BloodPressure\BPMeasuringPage.xaml.cs">
+	    <DependentUpon>BPMeasuringPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\BloodPressure\BPStatisticsPage.xaml.cs">
+	    <DependentUpon>BPStatisticsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\BloodPressure\BPHistoryPage.xaml.cs">
+	    <DependentUpon>BPHistoryPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\BodyWeight\BodyWeightPage.xaml.cs">
 	    <DependentUpon>BodyWeightPage.xaml</DependentUpon>
@@ -104,6 +110,11 @@
 	  <Compile Update="Pages\Home\HomePage.xaml.cs">
 	    <DependentUpon>HomePage.xaml</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\History\" />
+	  <Folder Include="Pages\Statistics\" />
 	</ItemGroup>
 
 </Project>

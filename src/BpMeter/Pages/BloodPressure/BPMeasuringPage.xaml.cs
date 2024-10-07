@@ -2,9 +2,9 @@
 
 namespace BpMeter.UI.Pages.BloodPressure
 {
-    public partial class BloodPressureMeasuringPage : ContentPage
+    public partial class BPMeasuringPage : ContentPage
     {
-        public BloodPressureMeasuringPage(BloodPressureMeasuringPageViewModel mainPageViewModel)
+        public BPMeasuringPage(BPMeasuringPageViewModel mainPageViewModel)
         {
             InitializeComponent();
             BindingContext = mainPageViewModel;
