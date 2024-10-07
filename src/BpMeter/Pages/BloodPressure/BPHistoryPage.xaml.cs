@@ -1,4 +1,4 @@
-namespace BpMeter.UI.Pages.History;
+namespace BpMeter.UI.Pages.BloodPressure;
 
 public partial class BPHistoryPage : ContentPage
 {

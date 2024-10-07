@@ -63,7 +63,7 @@ public class BPMeasuringPageViewModel : ViewModelBase
         && Diastolic != null && IsIntValid(Diastolic.Value)
         && HeartRate != null && IsIntValid(HeartRate.Value);
 
-    public ICommand SubmitReadingCommand { get; }
+    public ICommand SubmitCommand { get; }
 
     public BPMeasuringPageViewModel(IBpReadingService bpReadingService)
     {
@@ -72,7 +72,7 @@ public class BPMeasuringPageViewModel : ViewModelBase
         SelectedPartOfTheDay = PartOfTheDay.Unspecified;
         SelectedPalpitation = PalpitationType.Normal;
 
-        SubmitReadingCommand = new Command(
+        SubmitCommand = new Command(
             execute: async () =>
             {
                 await SubmitReading();
@@ -87,7 +87,7 @@ public class BPMeasuringPageViewModel : ViewModelBase
 
     protected override void RefreshCanExecutes()
     {
-        ((Command)SubmitReadingCommand)?.ChangeCanExecute();
+        ((Command)SubmitCommand)?.ChangeCanExecute();
     }
 
     private async Task SubmitReading()

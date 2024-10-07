@@ -2,7 +2,7 @@
 using BpMeter.Domain.Enums;
 using BpMeter.Mvvm;
 
-namespace BpMeter.Pages.History;
+namespace BpMeter.UI.Pages.BloodPressure;
 
 public class BPRecordViewModel : ViewModelBase
 {

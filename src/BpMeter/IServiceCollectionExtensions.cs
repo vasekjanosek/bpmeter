@@ -1,7 +1,5 @@
 ﻿using BpMeter.Pages.BloodPressure;
-using BpMeter.UI.Pages.Statistics;
 using BpMeter.UI.Pages.BloodPressure;
-using BpMeter.UI.Pages.History;
 using BpMeter.UI.Pages.BodyWeight;
 using BpMeter.UI.Pages.Home;
 
@@ -23,8 +21,8 @@ public static class IServiceCollectionExtensions
         services.AddSingleton<BPStatisticsPageViewModel>();
         services.AddSingleton<BPStatisticsPage>();
 
-        services.AddSingleton<BodyWeightPageViewModel>();
-        services.AddSingleton<BodyWeightPage>();
+        services.AddSingleton<BWMeasuringPageViewModel>();
+        services.AddSingleton<BWMeasuringPage>();
 
         return services;
     }

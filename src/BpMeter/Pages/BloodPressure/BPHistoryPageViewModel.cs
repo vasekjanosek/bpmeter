@@ -1,10 +1,9 @@
 ﻿using BpMeter.Application.Abstractions;
 using BpMeter.Mvvm;
-using BpMeter.Pages.History;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace BpMeter.UI.Pages.History;
+namespace BpMeter.UI.Pages.BloodPressure;
 
 public class BPHistoryPageViewModel : ViewModelBase
 {
@@ -75,7 +74,7 @@ public class BPHistoryPageViewModel : ViewModelBase
         try
         {
 
-            var history = await _bpReadingService.GetAllReadingAsync();
+            var history = await _bpReadingService.GetAllReadingsAsync();
 
             History.Clear();
 

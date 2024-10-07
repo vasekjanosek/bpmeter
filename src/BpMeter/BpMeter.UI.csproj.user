@@ -15,7 +15,7 @@
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <MauiXaml Update="Pages\BodyWeight\BodyWeightPage.xaml">
+    <MauiXaml Update="Pages\BodyWeight\BWMeasuringPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
     <MauiXaml Update="Pages\BloodPressure\BPHistoryPage.xaml">

@@ -20,7 +20,7 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="blood_pressure_alpha.png"
+                Source="blood_pressure_color.png"
                 HeightRequest="90"
                 Aspect="AspectFit"
                 SemanticProperties.Description="hearth with measuring blood pressure" />
@@ -82,7 +82,7 @@
             <Button Text="Submit measuring" 
                 SemanticProperties.Hint="Submit measuring"
                 HorizontalOptions="Center" 
-                Command="{Binding SubmitReadingCommand}"/>
+                Command="{Binding SubmitCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
 

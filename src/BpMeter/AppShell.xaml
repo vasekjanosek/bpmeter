@@ -6,8 +6,6 @@
     xmlns:home="clr-namespace:BpMeter.UI.Pages.Home"
     xmlns:bloodPressure="clr-namespace:BpMeter.UI.Pages.BloodPressure"
     xmlns:bodyWeight="clr-namespace:BpMeter.UI.Pages.BodyWeight"
-    xmlns:history="clr-namespace:BpMeter.UI.Pages.History"
-    xmlns:statistics="clr-namespace:BpMeter.UI.Pages.Statistics"
     Shell.FlyoutBehavior="Flyout"
     Title="Body Meter">
 
@@ -29,12 +27,12 @@
 
             <ShellContent
                 Title="Measuring History"
-                ContentTemplate="{DataTemplate history:BPHistoryPage}"
+                ContentTemplate="{DataTemplate bloodPressure:BPHistoryPage}"
                 Route="MeasuringHistoryPage" />
 
             <ShellContent
                 Title="Statistics"
-                ContentTemplate="{DataTemplate statistics:BPStatisticsPage}"
+                ContentTemplate="{DataTemplate bloodPressure:BPStatisticsPage}"
                 Route="StatisticsPage" />
         </Tab>
     </FlyoutItem>
@@ -43,7 +41,7 @@
                 Icon="/Resources/Images/weight_loss_black.jpg">
         <ShellContent
             Title="Body Weight Measuring"
-            ContentTemplate="{DataTemplate bodyWeight:BodyWeightPage}"
+            ContentTemplate="{DataTemplate bodyWeight:BWMeasuringPage}"
             Route="BloodPressureMeasuring" />
     </FlyoutItem>
 

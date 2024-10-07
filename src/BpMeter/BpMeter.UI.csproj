@@ -73,7 +73,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\BodyWeight\BodyWeightPage.xaml">
+	  <MauiXaml Update="Pages\BodyWeight\BWMeasuringPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\BloodPressure\BPHistoryPage.xaml">
@@ -104,8 +104,8 @@
 	  <Compile Update="Pages\BloodPressure\BPHistoryPage.xaml.cs">
 	    <DependentUpon>BPHistoryPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\BodyWeight\BodyWeightPage.xaml.cs">
-	    <DependentUpon>BodyWeightPage.xaml</DependentUpon>
+	  <Compile Update="Pages\BodyWeight\BWMeasuringPage.xaml.cs">
+	    <DependentUpon>BWMeasuringPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\Home\HomePage.xaml.cs">
 	    <DependentUpon>HomePage.xaml</DependentUpon>

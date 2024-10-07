@@ -1,4 +1,4 @@
-namespace BpMeter.UI.Pages.Statistics;
+namespace BpMeter.UI.Pages.BloodPressure;
 
 public partial class BPStatisticsPage : ContentPage
 {
