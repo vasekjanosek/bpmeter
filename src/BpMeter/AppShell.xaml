@@ -11,14 +11,16 @@
     Shell.FlyoutBehavior="Flyout"
     Title="Body Meter">
 
-    <FlyoutItem Title="Home">
+    <FlyoutItem Title="Home"
+                Icon="/Resources/Images/home_black.jpg">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate home:HomePage}"
             Route="HomePage" />
     </FlyoutItem>
 
-    <FlyoutItem Title="Blood Pressure">
+    <FlyoutItem Title="Blood Pressure"
+                Icon="/Resources/Images/blood_pressure_black.jpg">
         <Tab>
             <ShellContent
                 Title="Blood Pressure Measuring"
@@ -37,7 +39,8 @@
         </Tab>
     </FlyoutItem>
 
-    <FlyoutItem Title="Body Weight">
+    <FlyoutItem Title="Body Weight"
+                Icon="/Resources/Images/weight_loss_black.jpg">
         <ShellContent
             Title="Body Weight Measuring"
             ContentTemplate="{DataTemplate bodyWeight:BodyWeightPage}"
