@@ -10,6 +10,7 @@ public static class IServiceCollectionExtensions
         services.AddTransient<IBpReadingService, BpReadingService>();
         services.AddTransient<IBwReadingService, BwReadingService>();
         services.AddTransient<IStatisticsService, StatisticsService>();
+        services.AddTransient<IPersonalInformationService, PersonalInformationService>();
 
         return services;
     }

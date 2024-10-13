@@ -7,4 +7,6 @@ public interface IBwReadingService
     Task<BodyWeightReading> AddNewReadingAsync(BodyWeightReading reading);
 
     Task<List<BodyWeightReading>> GetAllReadingsAsync();
+
+    Task<BodyWeightReading> GetLastReadingAsync();
 }

@@ -24,4 +24,9 @@ public class BwReadingService : IBwReadingService
     {
         return await _bodyWeightRepository.GetAllAsync();
     }
+
+    public async Task<BodyWeightReading> GetLastReadingAsync()
+    {
+        return await _bodyWeightRepository.GetNewestAsync();
+    }
 }

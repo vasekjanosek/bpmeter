@@ -23,17 +23,17 @@
             <ShellContent
                 Title="Blood Pressure Measuring"
                 ContentTemplate="{DataTemplate bloodPressure:BPMeasuringPage}"
-                Route="BloodPressureMeasuring" />
+                Route="BPMeasuringPage" />
 
             <ShellContent
                 Title="Measuring History"
                 ContentTemplate="{DataTemplate bloodPressure:BPHistoryPage}"
-                Route="MeasuringHistoryPage" />
+                Route="BPHistoryPage" />
 
             <ShellContent
                 Title="Statistics"
                 ContentTemplate="{DataTemplate bloodPressure:BPStatisticsPage}"
-                Route="StatisticsPage" />
+                Route="BPStatisticsPage" />
         </Tab>
     </FlyoutItem>
 
@@ -42,7 +42,7 @@
         <ShellContent
             Title="Body Weight Measuring"
             ContentTemplate="{DataTemplate bodyWeight:BWMeasuringPage}"
-            Route="BloodPressureMeasuring" />
+            Route="BWMeasuringPage" />
     </FlyoutItem>
 
 </Shell>

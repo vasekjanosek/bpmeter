@@ -34,7 +34,7 @@ namespace BpMeter.Infrastructure.Repositories.SqLiteDb
         public async Task<List<BloodPressureReading>> GetAllAsync()
         {
             var connection = await Database.CreateOrGetConnectionAsync();
-            var result = await connection.QueryAsync<BloodPressureEntity>("select * from BloodPressureEntity");
+            var result = await connection.QueryAsync<BloodPressureEntity>($"select * from {nameof(BloodPressureEntity)}");
 
             return result.Select(x => Mapper.Map<BloodPressureReading>(x)).ToList();
         }

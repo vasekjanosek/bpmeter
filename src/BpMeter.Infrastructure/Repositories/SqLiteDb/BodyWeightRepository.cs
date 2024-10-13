@@ -15,9 +15,17 @@ internal class BodyWeightRepository : SqlLiteRepository<BodyWeightEntity, BodyWe
     public async Task<List<BodyWeightReading>> GetAllAsync()
     {
         var connection = await Database.CreateOrGetConnectionAsync();
-        var result = await connection.QueryAsync<BodyWeightEntity>("select * from BodyWeightEntity");
+        var result = await connection.QueryAsync<BodyWeightEntity>($"select * from {nameof(BodyWeightEntity)}");
 
         return result.Select(x => Mapper.Map<BodyWeightReading>(x)).ToList();
+    }
+
+    public async Task<BodyWeightReading> GetNewestAsync()
+    {
+        var connection = await Database.CreateOrGetConnectionAsync();
+        var result = await connection.QueryAsync<BodyWeightEntity>($"select * from {nameof(BodyWeightEntity)}");
+
+        return result.Select(x => Mapper.Map<BodyWeightReading>(x)).OrderBy(x => x.DateTime).First();
     }
 
     public async Task<BodyWeightReading> GetAsync(int id)
