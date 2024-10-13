@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="BpMeter.UI.Pages.BodyWeight.BWMeasuringPage"
+             Title="Body Weight">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="weight_loss_color.png"
+                HeightRequest="90"
+                Aspect="AspectFit"
+                SemanticProperties.Description="personal scale" />
+
+            <Label
+                Text="Measure your body weight"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Best way to regularly measure your body weight is every morning right after you wake up."
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Chill for 10 minutes discard your first reading and enter values for second and third reading." />
+
+            <Entry Placeholder="Body weight"
+               Text="{Binding BodyWeight}">
+                <Entry.Behaviors>
+                    <toolkit:TextValidationBehavior 
+                        InvalidStyle="{StaticResource InvalidEntryStyle}"
+                        ValidStyle="{StaticResource ValidEntryStyle}"
+                        Flags="ValidateOnValueChanged"
+                        RegexPattern="[0-9]{2,3}\\.?[0-9]{1,2}"
+                        MinimumLength="2"
+                        MaximumLength="6" />
+                </Entry.Behaviors>
+            </Entry>
+
+            <Entry Placeholder="Comment" Text="{Binding Commentary}" />
+
+            <Button Text="Submit measuring" 
+                SemanticProperties.Hint="Submit measuring"
+                HorizontalOptions="Center" 
+                Command="{Binding SubmitCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

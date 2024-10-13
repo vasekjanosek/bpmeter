@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:BpMeter.UI.Pages.Settings"
+             x:Class="BpMeter.UI.Pages.Settings.PersonalInformationPage"
+             Title="Personal infromation">
+    <ScrollView>
+        <StackLayout>
+            <Image
+                Source="health_insurance_color.png"
+                HeightRequest="90"
+                Aspect="AspectFit"
+                SemanticProperties.Description="personal scale" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="First name" />
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Text="{Binding FirstName}"/>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Middle name"/>
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Text="{Binding MidlleName}"/>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Last name"/>
+
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Text="{Binding LastName}"/>
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="Date of birth"/>
+
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="2"
+                    Text="{Binding BirthDate}"/>
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="Age"/>
+
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="2"
+                    Text="{Binding Age}"/>
+
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Height"/>
+
+                <Label
+                    Grid.Row="5"
+                    Grid.Column="2"
+                    Text="{Binding Height}"/>
+
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="0"
+                    Text="Weight"/>
+
+                <Label
+                    Grid.Row="6"
+                    Grid.Column="2"
+                    Text="{Binding Weight}"/>
+
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="0"
+                    Text="BMI"/>
+
+                <Label
+                    Grid.Row="7"
+                    Grid.Column="2"
+                    Text="{Binding BMI}"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

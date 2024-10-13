@@ -2,6 +2,7 @@
 using BpMeter.Domain;
 using BpMeter.Infrastructure.Repositories.Models;
 using AutoMapper;
+using BpMeter.Domain.Exceptions;
 
 namespace BpMeter.Infrastructure.Repositories.SqLiteDb;
 
@@ -11,13 +12,39 @@ internal class PersonalInformationRepository : SqlLiteRepository<PersonalInforma
     {
     }
 
-    public Task<List<PersonalInformation>> GetAllAsync()
+    public async Task<PersonalInformation> GetAsync()
     {
-        throw new NotImplementedException();
+        var connection = await Database.CreateOrGetConnectionAsync();
+        List<PersonalInformationEntity> result;
+
+        try
+        {
+            result = await connection.QueryAsync<PersonalInformationEntity>($"select * from {nameof(PersonalInformationEntity)}");
+        }
+        catch (Exception ex)
+        {
+            throw new EntityNotFoundException($"Entity {nameof(PersonalInformation)} was not found.", -1);
+        }
+
+        var reading = Mapper.Map<PersonalInformation>(result[0]);
+
+        return reading;
     }
 
-    public Task<PersonalInformation> GetAsync(int id)
+    public async Task<bool> IsPersonalInformationFilled()
     {
-        throw new NotImplementedException();
+        var connection = await Database.CreateOrGetConnectionAsync();
+
+        List<int> result;
+        try
+        {
+            result = await connection.QueryAsync<int>($"select count(*) from {nameof(PersonalInformationEntity)}");
+        }
+        catch (Exception)
+        {
+            throw new EntityNotFoundException($"Entity {nameof(PersonalInformation)} was not found.", -1);
+        }
+
+        return result[0] > 0;
     }
 }

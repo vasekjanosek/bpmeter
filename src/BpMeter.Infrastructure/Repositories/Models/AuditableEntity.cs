@@ -4,6 +4,6 @@ namespace BpMeter.Infrastructure.Repositories.Models;
 
 internal abstract class AuditableEntity
 {
-    [PrimaryKey]
+    [PrimaryKey, AutoIncrement]
     public int? Id { get; set; }
 }

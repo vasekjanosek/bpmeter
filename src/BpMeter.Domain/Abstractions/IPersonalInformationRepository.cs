@@ -2,7 +2,7 @@
 
 public interface IPersonalInformationRepository : IRepository<PersonalInformation>
 {
-    Task<List<PersonalInformation>> GetAllAsync();
+    Task<PersonalInformation> GetAsync();
 
-    Task<PersonalInformation> GetAsync(int id);
+    Task<bool> IsPersonalInformationFilled();
 }

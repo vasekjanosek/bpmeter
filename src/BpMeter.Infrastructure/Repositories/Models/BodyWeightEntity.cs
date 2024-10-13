@@ -2,7 +2,9 @@
 
 internal class BodyWeightEntity : AuditableEntity
 {
-    public int WeightInKg { get; set; }
+    public double WeightInKg { get; set; }
 
     public DateTime DateTime { get; set; }
+
+    public string Commentary { get; set; }
 }

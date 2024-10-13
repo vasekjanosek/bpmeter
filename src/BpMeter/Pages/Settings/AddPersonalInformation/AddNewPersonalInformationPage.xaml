@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BpMeter.UI.Pages.Settings.AddPersonalInformation.AddNewPersonalInformationPage"
+             Title="Add New Personal Infroamtion">
+    <VerticalStackLayout>
+        <Label Text="Hello" />
+        <Label Text="Before we start, enter your personal information." />
+        <Label Text="All the information you provide are stored only on your device. Only exception is when you export your data." />
+        <Label Text="Any information you provide it won't be collected." />
+        <HorizontalStackLayout>
+            <Button Text="Continue" Command="{Binding ChangePageCommand}" CommandParameter="FirstNamePage" />
+            <Button Text="Exit" Command="{Binding ExitCommand}" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace BpMeter.Pages.BloodPressure;
 
-public class BloodPressureMeasuringPageViewModel : ViewModelBase
+public class BPMeasuringPageViewModel : ViewModelBase
 {
     private readonly IBpReadingService _bpReadingService;
 
@@ -63,16 +63,16 @@ public class BloodPressureMeasuringPageViewModel : ViewModelBase
         && Diastolic != null && IsIntValid(Diastolic.Value)
         && HeartRate != null && IsIntValid(HeartRate.Value);
 
-    public ICommand SubmitReadingCommand { get; }
+    public ICommand SubmitCommand { get; }
 
-    public BloodPressureMeasuringPageViewModel(IBpReadingService bpReadingService)
+    public BPMeasuringPageViewModel(IBpReadingService bpReadingService)
     {
         _bpReadingService = bpReadingService;
 
         SelectedPartOfTheDay = PartOfTheDay.Unspecified;
         SelectedPalpitation = PalpitationType.Normal;
 
-        SubmitReadingCommand = new Command(
+        SubmitCommand = new Command(
             execute: async () =>
             {
                 await SubmitReading();
@@ -87,7 +87,7 @@ public class BloodPressureMeasuringPageViewModel : ViewModelBase
 
     protected override void RefreshCanExecutes()
     {
-        ((Command)SubmitReadingCommand)?.ChangeCanExecute();
+        ((Command)SubmitCommand)?.ChangeCanExecute();
     }
 
     private async Task SubmitReading()

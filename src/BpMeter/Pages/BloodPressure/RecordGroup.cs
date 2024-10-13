@@ -1,6 +1,6 @@
 ﻿using BpMeter.Domain;
 
-namespace BpMeter.Pages.History;
+namespace BpMeter.UI.Pages.BloodPressure;
 
 public class RecordGroup : List<BloodPressureReading>
 {
