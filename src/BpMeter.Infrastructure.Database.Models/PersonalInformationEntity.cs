@@ -1,6 +1,6 @@
-﻿namespace BpMeter.Domain;
+﻿namespace BpMeter.Infrastructure.Database.Enitites;
 
-public class PersonalInformation : Reading
+public class PersonalInformationEntity : AuditableEntity
 {
     public string FistName { get; set; }
 

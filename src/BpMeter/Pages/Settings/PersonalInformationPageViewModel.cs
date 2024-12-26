@@ -1,6 +1,4 @@
-﻿using BpMeter.Application;
-using BpMeter.Application.Abstractions;
-using BpMeter.Domain;
+﻿using BpMeter.Application.Abstractions;
 using BpMeter.Mvvm;
 using System.Windows.Input;
 
@@ -99,7 +97,7 @@ public class PersonalInformationPageViewModel : ViewModelBase
         ApplyChangesCommand = new Command(
             execute: async () =>
             {
-                await ApplyChanges();
+                await ApplyChangesAsync();
             });
     }
 
@@ -118,27 +116,27 @@ public class PersonalInformationPageViewModel : ViewModelBase
         Weight = 0;
     }
 
-    public async Task Initialize()
+    public async Task InitializeAsync()
     {
-        if (await _personalInformationService.IsPersonalInformationFilled())
+        if (_personalInformationService.IsPersonalInformationFilled())
         {
-            var personalInfo = await _personalInformationService.GetPersonalInformation();
+            var personalInfo = await _personalInformationService.GetPersonalInformationAsync();
             if (personalInfo != null)
             {
                 var bwReading = await _bwReadingService.GetLastReadingAsync();
                 FirstName = personalInfo.FistName;
                 MiddleName = personalInfo.MiddleName;
                 LastName = personalInfo.LastName;
-                BirthDate = personalInfo.BirthDate;
+                BirthDate = DateOnly.FromDateTime(personalInfo.BirthDate);
                 Height = personalInfo.HeightInCm;
                 Weight = bwReading.WeightInKg;
             }
         }
     }
 
-    public async Task ApplyChanges()
+    public async Task ApplyChangesAsync()
     {
-        await _personalInformationService.AddPersonalInformation(FirstName, MiddleName, LastName, BirthDate, GetHeight());
+        await _personalInformationService.AddPersonalInformationAsync(FirstName, MiddleName, LastName, BirthDate, GetHeight());
     }
 
     private int GetHeight()

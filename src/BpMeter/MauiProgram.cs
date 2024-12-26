@@ -1,8 +1,7 @@
 ﻿using BpMeter.Application;
-using BpMeter.Infrastructure;
-using BpMeter.Infrastructure.Repositories;
 using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using BpMeter.Infrastructure.Database.SqlLite;
 
 namespace BpMeter.UI
 {
@@ -20,15 +19,14 @@ namespace BpMeter.UI
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
-            builder.Services.ConfigureDatabase(FileSystem.Current.AppDataDirectory);
+            builder.Services.ConfigureSqlLiteDatabase(FileSystem.Current.AppDataDirectory);
             builder.Services.RegisterApplication();
-            builder.Services.RegisterInfrastructure();
+            builder.Services.RegisterSqlLiteDatabase();
             builder.Services.RegisterUi();
 
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
             return builder.Build();
         }
     }

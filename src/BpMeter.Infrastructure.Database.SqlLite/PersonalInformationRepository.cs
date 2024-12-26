@@ -1,10 +1,10 @@
 ﻿using BpMeter.Domain.Abstractions;
 using BpMeter.Domain;
-using BpMeter.Infrastructure.Repositories.Models;
 using AutoMapper;
 using BpMeter.Domain.Exceptions;
+using BpMeter.Infrastructure.Database.Enitites;
 
-namespace BpMeter.Infrastructure.Repositories.SqLiteDb;
+namespace BpMeter.Infrastructure.Database.SqlLite;
 
 internal class PersonalInformationRepository : SqlLiteRepository<PersonalInformationEntity, PersonalInformation>, IPersonalInformationRepository
 {

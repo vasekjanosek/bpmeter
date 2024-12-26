@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BpMeter.Domain;
+using BpMeter.Infrastructure.Database.Enitites;
 
 namespace BpMeter.Infrastructure.Repositories.Models;
 

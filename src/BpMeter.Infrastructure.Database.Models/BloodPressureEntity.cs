@@ -1,8 +1,8 @@
 ﻿using BpMeter.Domain.Enums;
 
-namespace BpMeter.Infrastructure.Repositories.Models;
+namespace BpMeter.Infrastructure.Database.Enitites;
 
-internal class BloodPressureEntity : AuditableEntity
+public class BloodPressureEntity : AuditableEntity
 {
     public int Systolic { get; set; }
 
@@ -16,5 +16,5 @@ internal class BloodPressureEntity : AuditableEntity
 
     public DateTime DateTime {  get; set; }
 
-    public string Commentary { get; set; }
+    public string? Commentary { get; set; }
 }

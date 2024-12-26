@@ -4,13 +4,15 @@ namespace BpMeter.Application.Abstractions;
 
 public interface IPersonalInformationService
 {
-    Task<bool> IsPersonalInformationFilled();
+    Task InitializeAsync();
 
-    Task<PersonalInformation> GetPersonalInformation();
+    bool IsPersonalInformationFilled();
 
-    Task AddPersonalInformation(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm);
+    Task<PersonalInformation> GetPersonalInformationAsync();
 
-    Task UpdatePersonalInformation(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm);
+    Task AddPersonalInformationAsync(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm);
 
-    Task DeletePersonalInformation();
+    Task UpdatePersonalInformationAsync(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm);
+
+    Task DeletePersonalInformationAsync();
 }

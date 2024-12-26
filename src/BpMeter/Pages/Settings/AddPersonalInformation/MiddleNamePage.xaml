@@ -8,8 +8,8 @@
         <Label Text="What your middle name?" />
         <Entry Text="{Binding MiddleName}" />
         <HorizontalStackLayout>
-            <Button Text="Back" Command="{Binding ChangePageCommand}" CommandParameter="LastNamePage" />
-            <Button Text="Continue" Command="{Binding ChangePageCommand}" CommandParameter="FirstNamePage" />
+            <Button Text="Back" Command="{Binding ChangePageCommand}" CommandParameter="FirstNamePage" />
+            <Button Text="Continue" Command="{Binding ChangePageCommand}" CommandParameter="LastNamePage" />
         </HorizontalStackLayout>
     </StackLayout>
 

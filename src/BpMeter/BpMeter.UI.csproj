@@ -69,7 +69,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\BpMeter.Application\BpMeter.Application.csproj" />
-	  <ProjectReference Include="..\BpMeter.Infrastructure\BpMeter.Infrastructure.csproj" />
+	  <ProjectReference Include="..\BpMeter.Infrastructure.Database.SqlLite\BpMeter.Infrastructure.Database.SqlLite.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

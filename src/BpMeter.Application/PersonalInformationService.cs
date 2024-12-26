@@ -8,50 +8,63 @@ public class PersonalInformationService : IPersonalInformationService
 {
     private readonly IPersonalInformationRepository _personalInformationRepository;
 
+    private PersonalInformation? _personalInformation;
+
     public PersonalInformationService(IPersonalInformationRepository personalInformationRepository)
     {
         _personalInformationRepository = personalInformationRepository;
     }
 
-    public async Task AddPersonalInformation(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
+    public async Task InitializeAsync()
+    {
+        _personalInformation = await GetPersonalInformationAsync();
+    }
+
+    public async Task AddPersonalInformationAsync(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
     {
         var info = new PersonalInformation()
         {
             FistName = fistName,
             MiddleName = middleName,
             LastName = lastName,
-            BirthDate = birthDate,
+            BirthDate = birthDate.ToDateTime(TimeOnly.MinValue),
             HeightInCm = heightInCm
         };
 
-        await _personalInformationRepository.InsertAsync(info);
+        _personalInformation = await _personalInformationRepository.InsertAsync(info);
     }
 
-    public async Task DeletePersonalInformation()
+    public async Task DeletePersonalInformationAsync()
     {
-        var info = await GetPersonalInformation();
+        var info = await GetPersonalInformationAsync();
         await _personalInformationRepository.DeleteAsync(info);
+        _personalInformation = null;
     }
 
-    public async Task<PersonalInformation> GetPersonalInformation()
+    public async Task<PersonalInformation> GetPersonalInformationAsync()
     {
-        return await _personalInformationRepository.GetAsync();
+        if (_personalInformation == null)
+        {
+            _personalInformation = await _personalInformationRepository.GetAsync();
+        }
+
+        return _personalInformation;
     }
 
-    public async Task<bool> IsPersonalInformationFilled()
+    public bool IsPersonalInformationFilled()
     {
-        return await _personalInformationRepository.IsPersonalInformationFilled();
+        return _personalInformation != null; ;
     }
 
-    public async Task UpdatePersonalInformation(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
+    public async Task UpdatePersonalInformationAsync(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
     {
-        var info = await GetPersonalInformation();
+        var info = await GetPersonalInformationAsync();
         info.FistName = fistName;
         info.MiddleName = middleName;
         info.LastName = lastName;
-        info.BirthDate = birthDate;
+        info.BirthDate = birthDate.ToDateTime(TimeOnly.MinValue);
         info.HeightInCm = heightInCm;
 
-        await _personalInformationRepository.UpdateAsync(info);
+        _personalInformation = await _personalInformationRepository.UpdateAsync(info);
     }
 }

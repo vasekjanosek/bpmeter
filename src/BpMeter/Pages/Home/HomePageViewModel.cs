@@ -26,8 +26,7 @@ public class HomePageViewModel : ViewModelBase
     {
         if (page.Equals(nameof(PersonalInformationPage)))
         {
-            var isPI = await _personalInformationService.IsPersonalInformationFilled();
-            if (!isPI)
+            if (!_personalInformationService.IsPersonalInformationFilled())
             {
                 page = nameof(AddNewPersonalInformationPage);
             }
