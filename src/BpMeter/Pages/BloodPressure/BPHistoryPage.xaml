@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:BpMeter.UI.Pages.BloodPressure"
+             x:Class="BpMeter.UI.Pages.BloodPressure.BPHistoryPage"
+             Title="Measuring History">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+        <Color x:Key="Highlight">LightGray</Color>
+    </ContentPage.Resources>
+    <Grid Margin="10,10,10,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding History}" Grid.Row="0" HasUnevenRows="True">
+            <ListView.Header>
+                <Grid BackgroundColor="{StaticResource Highlight}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Text="Date and time"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Systolic"/>
+                    <Label Grid.Row="0" Grid.Column="2" Text="Diastolic"/>
+                    <Label Grid.Row="0" Grid.Column="3" Text="Heart rate"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="More details"
+                                       BackgroundColor="LightGreen"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:BPHistoryPageViewModel}}, Path=ShowDetailsCommand}"
+                                       CommandParameter="{Binding .}" />
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem Text="Less details"
+                                       BackgroundColor="PaleVioletRed"
+                                       Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:BPHistoryPageViewModel}}, Path=HideDetailsCommand}"
+                                       CommandParameter="{Binding .}" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="2*" />
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                   Grid.Row="0"
+                                   Grid.Column="0"
+                                   Text="{Binding DateTime}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                                <Label 
+                                   Grid.Row="0" Grid.Column="1"
+                                   Text="{Binding Systolic}"
+                                   FontAttributes="Bold" />
+                                <Label
+                                   Grid.Row="0"
+                                   Grid.Column="2"
+                                   Text="{Binding Diastolic}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                                <Label
+                                   Grid.Row="0"
+                                   Grid.Column="3"
+                                   Text="{Binding HeartRate}"
+                                   FontAttributes="Italic"
+                                   VerticalOptions="End" />
+                                <Grid Grid.Row="1"
+                                      Grid.Column="0"
+                                      Grid.ColumnSpan="4"
+                                      IsVisible="{Binding ShowDetails}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="PartOfTheDay:" BackgroundColor="{StaticResource Highlight}" Grid.Row="0" Grid.Column="0" />
+                                    <Label Text="{Binding PartOfTheDay}" Grid.Row="0" Grid.Column="1" />
+                                    <Label Text="Palpitaitons:" BackgroundColor="{StaticResource Highlight}" Grid.Row="1" Grid.Column="0" />
+                                    <Label Text="{Binding Palpitation}" Grid.Row="1" Grid.Column="1" />
+                                    <Label Text="Commentary:" BackgroundColor="{StaticResource Highlight}" Grid.Row="2" Grid.Column="0" />
+                                    <Label Text="{Binding Commentary}" Grid.Row="2" Grid.Column="1" />
+                                </Grid>
+                            </Grid>
+                        </SwipeView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Refresh" Grid.Row="1" WidthRequest="200"
+                SemanticProperties.Hint="Refresh history"
+                HorizontalOptions="Center" 
+                Command="{Binding RefreshCommand}"/>
+    </Grid>
+</ContentPage>

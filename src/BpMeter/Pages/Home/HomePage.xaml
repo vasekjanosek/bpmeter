@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:BpMeter.UI.Pages.Home"
              x:Class="BpMeter.UI.Pages.Home.HomePage"
              Title="Home">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to statistics"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <FlexLayout AlignContent="SpaceEvenly" JustifyContent="SpaceEvenly" AlignItems="Center" Wrap="Wrap">
+        <Frame HeightRequest="180" WidthRequest="180" >
+            <StackLayout Orientation="Vertical">
+                <Image HorizontalOptions="Center"
+                    Source="blood_pressure_color.png"
+                    HeightRequest="70"
+                    Aspect="AspectFit"
+                    Margin="0,0,0,20" />
+                <Label Text="Measure" HorizontalOptions="Center"/>
+                <Label Text="blood pressure" HorizontalOptions="Center" />
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:HomePageViewModel}}, Path=TapCommand}"
+                    CommandParameter="BPMeasuringPage"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame HeightRequest="180" WidthRequest="180" >
+            <StackLayout Orientation="Vertical">
+                <Image HorizontalOptions="Center"
+                    Source="weight_loss_color.png"
+                    HeightRequest="70"
+                    Aspect="AspectFit"
+                    Margin="0,0,0,20" />
+                <Label Text="Measure" HorizontalOptions="Center" />
+                <Label Text="body weight" HorizontalOptions="Center" />
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:HomePageViewModel}}, Path=TapCommand}"
+                    CommandParameter="BWMeasuringPage"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <Frame HeightRequest="180" WidthRequest="180" >
+            <StackLayout Orientation="Vertical">
+                <Image HorizontalOptions="Center"
+                    Source="health_insurance_color.png"
+                    HeightRequest="70"
+                    Aspect="AspectFit"
+                    Margin="0,0,0,20" />
+                <Label Text="Personal" HorizontalOptions="Center" />
+                <Label Text="information" HorizontalOptions="Center" />
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:HomePageViewModel}}, Path=TapCommand}"
+                    CommandParameter="PersonalInformationPage"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </FlexLayout>
 </ContentPage>

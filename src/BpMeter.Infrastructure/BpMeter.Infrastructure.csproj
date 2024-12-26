@@ -19,4 +19,9 @@
     <ProjectReference Include="..\BpMeter.Domain\BpMeter.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Models\" />
+    <Folder Include="Repositories\PostgreSQL\" />
+  </ItemGroup>
+
 </Project>

@@ -6,36 +6,43 @@
     xmlns:home="clr-namespace:BpMeter.UI.Pages.Home"
     xmlns:bloodPressure="clr-namespace:BpMeter.UI.Pages.BloodPressure"
     xmlns:bodyWeight="clr-namespace:BpMeter.UI.Pages.BodyWeight"
-    xmlns:history="clr-namespace:BpMeter.UI.Pages.History"
-    xmlns:statistics="clr-namespace:BpMeter.UI.Pages.Statistics"
     Shell.FlyoutBehavior="Flyout"
     Title="Body Meter">
 
-    <Tab>
+    <FlyoutItem Title="Home"
+                Icon="/Resources/Images/home_black.jpg">
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate home:HomePage}"
             Route="HomePage" />
-        
-        <ShellContent
-            Title="Blood Pressure Measuring"
-            ContentTemplate="{DataTemplate bloodPressure:BloodPressureMeasuringPage}"
-            Route="BloodPressureMeasuring" />
+    </FlyoutItem>
 
+    <FlyoutItem Title="Blood Pressure"
+                Icon="/Resources/Images/blood_pressure_black.jpg">
+        <Tab>
+            <ShellContent
+                Title="Blood Pressure Measuring"
+                ContentTemplate="{DataTemplate bloodPressure:BPMeasuringPage}"
+                Route="BPMeasuringPage" />
+
+            <ShellContent
+                Title="Measuring History"
+                ContentTemplate="{DataTemplate bloodPressure:BPHistoryPage}"
+                Route="BPHistoryPage" />
+
+            <ShellContent
+                Title="Statistics"
+                ContentTemplate="{DataTemplate bloodPressure:BPStatisticsPage}"
+                Route="BPStatisticsPage" />
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Body Weight"
+                Icon="/Resources/Images/weight_loss_black.jpg">
         <ShellContent
             Title="Body Weight Measuring"
-            ContentTemplate="{DataTemplate bodyWeight:BodyWeightPage}"
-            Route="BloodPressureMeasuring" />
-
-        <ShellContent
-            Title="Measuring History"
-            ContentTemplate="{DataTemplate history:MeasuringHistoryPage}"
-            Route="MeasuringHistoryPage" />
-
-        <ShellContent
-            Title="Statistics"
-            ContentTemplate="{DataTemplate statistics:StatisticsPage}"
-            Route="StatisticsPage" />
-    </Tab>
+            ContentTemplate="{DataTemplate bodyWeight:BWMeasuringPage}"
+            Route="BWMeasuringPage" />
+    </FlyoutItem>
 
 </Shell>

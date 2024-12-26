@@ -20,7 +20,7 @@ namespace BpMeter.Application
             return await _bpRepository.InsertAsync(reading);
         }
 
-        public async Task<List<BloodPressureReading>> GetAllReadingAsync()
+        public async Task<List<BloodPressureReading>> GetAllReadingsAsync()
         {
             return await _bpRepository.GetAllAsync();
         }

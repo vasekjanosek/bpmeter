@@ -69,20 +69,44 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\BpMeter.Application\BpMeter.Application.csproj" />
-	  <ProjectReference Include="..\BpMeter.Infrastructure\BpMeter.Infrastructure.csproj" />
+	  <ProjectReference Include="..\BpMeter.Infrastructure.Database.SqlLite\BpMeter.Infrastructure.Database.SqlLite.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\BodyWeight\BodyWeightPage.xaml">
+	  <MauiXaml Update="Pages\BodyWeight\BWMeasuringPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\History\MeasuringHistoryPage.xaml">
+	  <MauiXaml Update="Pages\BloodPressure\BPHistoryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Home\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\Statistics\StatisticsPage.xaml">
+	  <MauiXaml Update="Pages\BloodPressure\BPStatisticsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\AddPersonalInformation\AddNewPersonalInformationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\AddPersonalInformation\HeightPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\AddPersonalInformation\BirthDatePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\AddPersonalInformation\LastNamePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\AddPersonalInformation\MiddleNamePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\AddPersonalInformation\FirstNamePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\PersonalInformationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Settings\SettingsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -95,15 +119,46 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\BloodPressure\BloodPressureMeasuringPage.xaml.cs">
-	    <DependentUpon>BloodPressureMeasuringPage.xaml</DependentUpon>
+	  <Compile Update="Pages\BloodPressure\BPMeasuringPage.xaml.cs">
+	    <DependentUpon>BPMeasuringPage.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\BodyWeight\BodyWeightPage.xaml.cs">
-	    <DependentUpon>BodyWeightPage.xaml</DependentUpon>
+	  <Compile Update="Pages\BloodPressure\BPStatisticsPage.xaml.cs">
+	    <DependentUpon>BPStatisticsPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\BloodPressure\BPHistoryPage.xaml.cs">
+	    <DependentUpon>BPHistoryPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\BodyWeight\BWMeasuringPage.xaml.cs">
+	    <DependentUpon>BWMeasuringPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\Home\HomePage.xaml.cs">
 	    <DependentUpon>HomePage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="Pages\Settings\AddPersonalInformation\HeightPage.xaml.cs">
+	    <DependentUpon>HeightPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Settings\AddPersonalInformation\BirthDatePage.xaml.cs">
+	    <DependentUpon>BirthDatePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Settings\AddPersonalInformation\LastNamePage.xaml.cs">
+	    <DependentUpon>LastNamePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Settings\AddPersonalInformation\MiddleNamePage.xaml.cs">
+	    <DependentUpon>MiddleNamePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Settings\AddPersonalInformation\FirstNamePage.xaml.cs">
+	    <DependentUpon>FirstNamePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Settings\PersonalInformationPage.xaml.cs">
+	    <DependentUpon>PersonalInformationPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\Settings\SettingsPage.xaml.cs">
+	    <DependentUpon>SettingsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Pages\Statistics\" />
 	</ItemGroup>
 
 </Project>
