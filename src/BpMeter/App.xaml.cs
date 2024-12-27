@@ -7,9 +7,6 @@ namespace BpMeter.UI
         public App(IPersonalInformationService service)
         {
             InitializeComponent();
-
-            Task.Run(service.InitializeAsync).Wait();
-
             MainPage = new AppShell();
         }
     }

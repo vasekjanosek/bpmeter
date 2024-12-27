@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Database.PostgreSQL", "BpMeter.Infrastructure.Database.PostgreSQL\BpMeter.Infrastructure.Database.PostgreSQL.csproj", "{2CD3877F-7301-4253-B518-EF0269D763DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.API", "BpMeter.API\BpMeter.API.csproj", "{212B86C2-7E7A-4205-BDE2-CF17243CF2F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Dto", "BpMeter.Dto\BpMeter.Dto.csproj", "{635EF856-E660-486E-89B1-43367ED228BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{2CD3877F-7301-4253-B518-EF0269D763DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CD3877F-7301-4253-B518-EF0269D763DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CD3877F-7301-4253-B518-EF0269D763DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212B86C2-7E7A-4205-BDE2-CF17243CF2F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212B86C2-7E7A-4205-BDE2-CF17243CF2F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212B86C2-7E7A-4205-BDE2-CF17243CF2F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212B86C2-7E7A-4205-BDE2-CF17243CF2F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{635EF856-E660-486E-89B1-43367ED228BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635EF856-E660-486E-89B1-43367ED228BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635EF856-E660-486E-89B1-43367ED228BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635EF856-E660-486E-89B1-43367ED228BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

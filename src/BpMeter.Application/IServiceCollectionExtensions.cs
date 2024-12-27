@@ -14,4 +14,19 @@ public static class IServiceCollectionExtensions
 
         return services;
     }
+
+    public static async Task InitializeApplicationAsync(this IServiceProvider services)
+    {
+        var bpReadingService = services.GetRequiredService<IBpReadingService>();
+
+        await bpReadingService.InitializeAsync();
+
+        var bwReadingService = services.GetRequiredService<IBwReadingService>();
+
+        await bwReadingService.InitializeAsync();
+
+        var personalInfoService = services.GetRequiredService<IPersonalInformationService>();
+
+        await personalInfoService.InitializeAsync();
+    }
 }
