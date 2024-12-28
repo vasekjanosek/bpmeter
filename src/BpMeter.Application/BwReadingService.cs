@@ -29,4 +29,9 @@ public class BwReadingService : IBwReadingService
     {
         return await _bodyWeightRepository.GetNewestAsync();
     }
+
+    public Task InitializeAsync()
+    {
+        return Task.CompletedTask;
+    }
 }

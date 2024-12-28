@@ -27,7 +27,11 @@ namespace BpMeter.UI
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            return builder.Build();
+            var app = builder.Build();
+
+            Task.Run(async () => await app.Services.InitializeApplicationAsync()).Wait();
+
+            return app;
         }
     }
 }

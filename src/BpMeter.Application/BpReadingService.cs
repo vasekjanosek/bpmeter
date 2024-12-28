@@ -24,5 +24,10 @@ namespace BpMeter.Application
         {
             return await _bpRepository.GetAllAsync();
         }
+
+        public Task InitializeAsync()
+        {
+            return Task.CompletedTask;
+        }
     }
 }
