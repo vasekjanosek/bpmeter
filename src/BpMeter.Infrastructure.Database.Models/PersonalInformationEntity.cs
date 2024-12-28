@@ -1,8 +1,8 @@
-﻿namespace BpMeter.Infrastructure.Database.Enitites;
+﻿namespace BpMeter.Infrastructure.Database.Entites;
 
 public class PersonalInformationEntity : AuditableEntity
 {
-    public string FistName { get; set; }
+    public string FirstName { get; set; }
 
     public string? MiddleName { get; set; }
 

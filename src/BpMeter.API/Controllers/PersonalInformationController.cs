@@ -30,7 +30,7 @@ public class PersonalInformationController : ControllerBase
     public async Task<CreatedResult> AddPersonalInformation([FromBody]PersonalInformationDto data)
     {
         await _personalInfromationService.AddPersonalInformationAsync(
-            data.FistName,
+            data.FirstName,
             data.MiddleName,
             data.LastName,
             data.BirthDate != null ? DateOnly.FromDateTime(data.BirthDate.Value) : DateOnly.MinValue,

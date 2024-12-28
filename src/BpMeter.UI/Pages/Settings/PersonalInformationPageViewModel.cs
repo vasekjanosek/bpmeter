@@ -124,7 +124,7 @@ public class PersonalInformationPageViewModel : ViewModelBase
             if (personalInfo != null)
             {
                 var bwReading = await _bwReadingService.GetLastReadingAsync();
-                FirstName = personalInfo.FistName;
+                FirstName = personalInfo.FirstName;
                 MiddleName = personalInfo.MiddleName;
                 LastName = personalInfo.LastName;
                 BirthDate = DateOnly.FromDateTime(personalInfo.BirthDate);

@@ -20,11 +20,11 @@ public class PersonalInformationService : IPersonalInformationService
         _personalInformation = await GetPersonalInformationAsync();
     }
 
-    public async Task AddPersonalInformationAsync(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
+    public async Task AddPersonalInformationAsync(string firstName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
     {
         var info = new PersonalInformation()
         {
-            FistName = fistName,
+            FirstName = firstName,
             MiddleName = middleName,
             LastName = lastName,
             BirthDate = birthDate.ToDateTime(TimeOnly.MinValue),
@@ -56,10 +56,10 @@ public class PersonalInformationService : IPersonalInformationService
         return _personalInformation != null; ;
     }
 
-    public async Task UpdatePersonalInformationAsync(string fistName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
+    public async Task UpdatePersonalInformationAsync(string firstName, string middleName, string lastName, DateOnly birthDate, int heightInCm)
     {
         var info = await GetPersonalInformationAsync();
-        info.FistName = fistName;
+        info.FirstName = firstName;
         info.MiddleName = middleName;
         info.LastName = lastName;
         info.BirthDate = birthDate.ToDateTime(TimeOnly.MinValue);

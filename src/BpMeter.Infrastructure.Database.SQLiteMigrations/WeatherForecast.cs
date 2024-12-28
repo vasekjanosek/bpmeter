@@ -1,4 +1,4 @@
-namespace BpMeter.API
+namespace BpMeter.Infrastructure.Database.SQLiteMigrations
 {
     public class WeatherForecast
     {

@@ -1,6 +1,4 @@
-# Godot 4+ specific ignores
 .vs
 obj/
 bin/
-
 *.csproj.user

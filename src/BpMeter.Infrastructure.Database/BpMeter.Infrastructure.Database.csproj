@@ -15,8 +15,4 @@
     <ProjectReference Include="..\BpMeter.Infrastructure.Database.Models\BpMeter.Infrastructure.Database.Enitites.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
 </Project>

@@ -5,7 +5,7 @@ namespace BpMeter.Dto;
 public class PersonalInformationDto
 {
     [Required]
-    public string? FistName { get; set; }
+    public string? FirstName { get; set; }
 
     public string? MiddleName { get; set; }
 

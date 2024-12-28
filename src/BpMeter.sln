@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BpMeter.UI", "BpMeter\BpMeter.UI.csproj", "{F283CBCC-CC5D-40B8-A34F-21CDF1D61803}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BpMeter.UI", "BpMeter.UI\BpMeter.UI.csproj", "{F283CBCC-CC5D-40B8-A34F-21CDF1D61803}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BpMeter.Application", "BpMeter.Application\BpMeter.Application.csproj", "{4ABEE4C9-A028-4061-8890-0E001B1CF1AF}"
 EndProject
@@ -15,13 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{FC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Database.Enitites", "BpMeter.Infrastructure.Database.Models\BpMeter.Infrastructure.Database.Enitites.csproj", "{03BF8299-C06C-4869-8D60-8AD2793955F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Database.SqlLite", "BpMeter.Infrastructure.Database.SqlLite\BpMeter.Infrastructure.Database.SqlLite.csproj", "{6CAF4899-14FE-42A6-9472-868792D1D61E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Database.PostgreSQL", "BpMeter.Infrastructure.Database.PostgreSQL\BpMeter.Infrastructure.Database.PostgreSQL.csproj", "{2CD3877F-7301-4253-B518-EF0269D763DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Database", "BpMeter.Infrastructure.Database\BpMeter.Infrastructure.Database.csproj", "{2CD3877F-7301-4253-B518-EF0269D763DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.API", "BpMeter.API\BpMeter.API.csproj", "{212B86C2-7E7A-4205-BDE2-CF17243CF2F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Dto", "BpMeter.Dto\BpMeter.Dto.csproj", "{635EF856-E660-486E-89B1-43367ED228BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.Infrastructure.Database.SQLiteMigrations", "BpMeter.Infrastructure.Database.SQLiteMigrations\BpMeter.Infrastructure.Database.SQLiteMigrations.csproj", "{4755E628-148F-4CAD-A48C-B22F751AEDE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BpMeter.ApiClient", "BpMeter.ApiClient\BpMeter.ApiClient.csproj", "{4E5E8B7F-F7D9-4C10-8124-7723121CFD30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +49,6 @@ Global
 		{03BF8299-C06C-4869-8D60-8AD2793955F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03BF8299-C06C-4869-8D60-8AD2793955F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03BF8299-C06C-4869-8D60-8AD2793955F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6CAF4899-14FE-42A6-9472-868792D1D61E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6CAF4899-14FE-42A6-9472-868792D1D61E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6CAF4899-14FE-42A6-9472-868792D1D61E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6CAF4899-14FE-42A6-9472-868792D1D61E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CD3877F-7301-4253-B518-EF0269D763DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CD3877F-7301-4253-B518-EF0269D763DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CD3877F-7301-4253-B518-EF0269D763DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +61,14 @@ Global
 		{635EF856-E660-486E-89B1-43367ED228BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635EF856-E660-486E-89B1-43367ED228BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635EF856-E660-486E-89B1-43367ED228BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4755E628-148F-4CAD-A48C-B22F751AEDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4755E628-148F-4CAD-A48C-B22F751AEDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4755E628-148F-4CAD-A48C-B22F751AEDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4755E628-148F-4CAD-A48C-B22F751AEDE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5E8B7F-F7D9-4C10-8124-7723121CFD30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5E8B7F-F7D9-4C10-8124-7723121CFD30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5E8B7F-F7D9-4C10-8124-7723121CFD30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5E8B7F-F7D9-4C10-8124-7723121CFD30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,8 +76,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FC02AD8E-122B-4549-9939-C0B3277AB7A6} = {6242AC50-7670-4E76-9A39-3F84F27E7285}
 		{03BF8299-C06C-4869-8D60-8AD2793955F9} = {FC02AD8E-122B-4549-9939-C0B3277AB7A6}
-		{6CAF4899-14FE-42A6-9472-868792D1D61E} = {FC02AD8E-122B-4549-9939-C0B3277AB7A6}
 		{2CD3877F-7301-4253-B518-EF0269D763DE} = {FC02AD8E-122B-4549-9939-C0B3277AB7A6}
+		{4755E628-148F-4CAD-A48C-B22F751AEDE2} = {FC02AD8E-122B-4549-9939-C0B3277AB7A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {630B4618-4476-436D-9F78-7EF446E50FA0}

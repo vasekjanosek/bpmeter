@@ -1,32 +1,70 @@
-namespace BpMeter.API;
+using BpMeter.API.Settings;
+using BpMeter.Application;
+using BpMeter.Infrastructure.Database.Entites;
+using BpMeter.Infrastructure.Database.PostgreSQL;
+using Microsoft.EntityFrameworkCore;
 
-public class Program
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<DbSettings>(builder.Configuration.GetSection("DbSettings"));
+
+if (!bool.TryParse(builder.Configuration["DbSettings:UseInMemoryDb"], out bool useInMemoryDb))
 {
-    public static void Main(string[] args)
+    useInMemoryDb = true;
+}
+
+// Add services to the container.
+builder.Services.AddDbContextPool<BpMeterDbContext>(opt =>
+{
+    if (!useInMemoryDb)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        opt.UseNpgsql(builder.Configuration["DbSettings:ConnectionString"], b => b.MigrationsAssembly("BpMeter.API"));
+    }
+    else
+    {
+        opt.UseInMemoryDatabase("BpMeterDB");
+    }
 
-        // Add services to the container.
+    opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
 
-        builder.Services.AddControllers();
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
+builder.Services.RegisterApplication();
 
-        var app = builder.Build();
+builder.Services.RegisterDatabase(ServiceLifetime.Scoped);
 
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+builder.Services.AddAutoMapper(typeof(DbMappingProfile));
+
+builder.Services.AddControllers();
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddOpenApi();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+app.MapControllers();
+
+
+if (!useInMemoryDb)
+{
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<BpMeterDbContext>();
+
+        if ((await dbContext.Database.GetPendingMigrationsAsync()).Any())
         {
-            app.MapOpenApi();
+            dbContext.Database.Migrate();
         }
 
-        app.UseHttpsRedirection();
-
-        app.UseAuthorization();
-
-
-        app.MapControllers();
-
-        app.Run();
+        await app.Services.InitializeApplicationAsync();
     }
 }
+
+app.Run();

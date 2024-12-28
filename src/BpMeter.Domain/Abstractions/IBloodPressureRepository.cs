@@ -4,5 +4,5 @@ public interface IBloodPressureRepository : IRepository<BloodPressureReading>
 {
     Task<List<BloodPressureReading>> GetAllAsync();
 
-    Task<BloodPressureReading> GetAsync(int id);
+    Task<BloodPressureReading> GetAsync(Guid id);
 }

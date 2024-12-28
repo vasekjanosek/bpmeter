@@ -1,10 +1,9 @@
 ﻿using AutoMapper;
 using BpMeter.Domain;
-using BpMeter.Infrastructure.Database.Enitites;
 
-namespace BpMeter.Infrastructure.Repositories.Models;
+namespace BpMeter.Infrastructure.Database.Entites;
 
-internal class DbMappingProfile : Profile
+public class DbMappingProfile : Profile
 {
     public DbMappingProfile()
     {

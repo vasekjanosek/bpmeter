@@ -2,7 +2,7 @@
 
 public class PersonalInformation : Reading
 {
-    public string FistName { get; set; }
+    public string FirstName { get; set; }
 
     public string? MiddleName { get; set; }
 

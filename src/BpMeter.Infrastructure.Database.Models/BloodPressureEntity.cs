@@ -1,6 +1,6 @@
 ﻿using BpMeter.Domain.Enums;
 
-namespace BpMeter.Infrastructure.Database.Enitites;
+namespace BpMeter.Infrastructure.Database.Entites;
 
 public class BloodPressureEntity : AuditableEntity
 {

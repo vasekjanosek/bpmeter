@@ -1,0 +1,6 @@
+@BpMeter.Infrastructure.Database.SQLiteMigrations_HostAddress = http://localhost:5290
+
+GET {{BpMeter.Infrastructure.Database.SQLiteMigrations_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
